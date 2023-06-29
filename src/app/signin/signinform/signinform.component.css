@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Assistant';
+    src: url(../../../assets/font/static/Assistant-SemiBold.ttf);
+}
+input {
+    width: 300px;
+    height: 40px;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    border: none;
+}
+input::placeholder {
+    font-family: 'Assistant';
+    font-size: 16px;
+    text-align: left;
+    position: absolute;
+    left: 20px;
+    color: gray;
+    opacity: 30%;
+}
+input:focus {
+    border: none;
+    outline: none;
+    padding-left: 20px;
+}
+input:focus::placeholder {
+    color: transparent;
+}
+form {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 230px;
+    left: 60%;
+}
+button {
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    line-height: 15px;
+    width: 90px;
+    height: 37px;
+    background-color: #37467F;
+    border: none;
+    margin-left: 105%;
+}
+h1 {
+    color: #37467F;
+    text-align: center;
+    font-size: 40px;
+    line-height: 15px;
+    font-family: 'Assistant';
+    font-weight: 700;
+    position: absolute;
+    top: -60px;
+}
+p {
+    color: #37467F;
+    font-family: 'Assistant';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 15px;
+    position: absolute;
+    top: -29px;
+    left: 84px;
+};
