@@ -5,7 +5,6 @@
 input {
     width: 300px;
     height: 40px;
-    background-color: white;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-bottom: 20px;
     border: none;
@@ -25,10 +24,11 @@ input:focus {
     padding-left: 20px;
 }
 input:focus::placeholder {
-    color: transparent;
+    color: #37467F;
+    opacity: 100%;
 }
 form {
-    width: 200px;
+    width: 300px;
     height: 200px;
     position: absolute;
     top: 230px;
@@ -44,6 +44,9 @@ button {
     background-color: #37467F;
     border: none;
     margin-left: 105%;
+}
+button:hover {
+    background-color: #596cb3;
 }
 h1 {
     color: #37467F;
@@ -64,4 +67,34 @@ p {
     position: absolute;
     top: -29px;
     left: 84px;
-};
+}
+.theAge {
+    width: 300px; 
+    height: 40px; 
+    margin-bottom: 20px; 
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+    border: none;
+    color: gray;
+    padding-left: 20px;
+}
+.theAge:focus {
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    color: #37467F;
+    opacity: 100%;
+}
+option {
+    color: #37467F;
+}
+
+.alert {
+    height: 20px;
+    width: 400px;
+    margin-top: -23px;
+    margin-left: -15px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: 'Assistant';
+    color: #37467F;
+}

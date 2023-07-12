@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SigninComponent } from './signin.component';
 import { SigninformComponent } from './signinform/signinform.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SigninheaderComponent } from './signinheader/signinheader.component';
 
 
@@ -10,11 +11,12 @@ import { SigninheaderComponent } from './signinheader/signinheader.component';
   declarations: [
     SigninComponent,
     SigninformComponent,
-    SigninheaderComponent
+    SigninheaderComponent,
   ],
   imports: [
-    CommonModule
-  ],
+    CommonModule,
+    ReactiveFormsModule,
+  ], 
   exports: [
     SigninComponent
   ]

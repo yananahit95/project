@@ -7,8 +7,9 @@
 </div>
 <img src="../../assets/images/logo2.png" class="logo">
 
-<app-signupform></app-signupform>
-<app-signupheader></app-signupheader>
 
+<app-signupheader></app-signupheader>
+<app-signupform (successEvent) = "getFullName($event)" ></app-signupform>
+<app-signup-modal [fullName] = "fullName"></app-signup-modal>
 
   

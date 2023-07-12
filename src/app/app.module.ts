@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-import { SigninModule } from './signin/signin.module';
 import { SignupModule } from './signup/signup.module';
+import { SigninModule } from './signin/signin.module';
+
 
 
 @NgModule({
@@ -12,8 +12,8 @@ import { SignupModule } from './signup/signup.module';
   ],
   imports: [
     BrowserModule,
-    SigninModule,
-    SignupModule
+    SignupModule,
+    SigninModule
   ],
   providers: [],
   bootstrap: [AppComponent]

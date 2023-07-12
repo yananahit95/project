@@ -1,10 +1,70 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UsersService } from 'src/users.service';
 
 @Component({
   selector: 'app-signupform',
   templateUrl: './signupform.component.html',
   styleUrls: ['./signupform.component.css']
 })
-export class SignupformComponent {
 
+export class SignupformComponent {
+@Output() successEvent = new EventEmitter<any>();
+ ages: number[] = [];
+
+ signupForm = new FormGroup({
+  fullName: new FormControl('', [
+    Validators.required,
+    Validators.minLength(4)
+  ]),
+  theAge: new FormControl('', [
+    Validators.required,
+  ]),
+  profession: new FormControl('', [
+    Validators.required,
+  ] ),
+  password: new FormControl('', [
+    Validators.required,
+    Validators.minLength(8),
+    Validators.maxLength(20),
+
+  ]),
+  confirmPassword: new FormControl('', [
+    Validators.required,
+    Validators.minLength(8),
+    Validators.maxLength(20)
+  ]),
+}) ;
+
+
+ constructor(public US: UsersService){
+  this.addAges()
+ }
+
+ addAges() {
+  for(let i = 2023; i >= 1930; i--) {
+    this.ages.push(i)
+  }
+ }
+ passControl(): any {     
+  if (this.signupForm.get(['password'])?.value !== '' && this.signupForm.valid) {    
+    return this.signupForm.get(['password'])?.value === this.signupForm.get(['confirmPassword'])?.value;  
+     }  
+    };
+    isPasswordMismatch: boolean = false;
+    checkPasswordMatch() {
+      const password = this.signupForm.get('password')?.value;
+      const confirmPassword = this.signupForm.get('confirmPassword')?.value;
+      this.isPasswordMismatch = password !== confirmPassword;
+    }
+  onSave() {
+    const formValues = this.signupForm.value;
+    const formValuesJson = JSON.stringify(formValues);
+    let userArrValues = JSON.stringify(this.US.user.push(formValues));
+    console.log(userArrValues);
+    sessionStorage.setItem('userArrayValues', formValuesJson);
+    this.successEvent.emit(this.signupForm.get('fullName')?.value);
+    this.signupForm.reset();
+ }
 }
+

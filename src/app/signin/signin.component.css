@@ -25,3 +25,30 @@
     top: -25%;
     left: 24.5px;
 }
+* {
+    margin: -8px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.first {
+    width: 30%;
+    height: 732px;
+    margin-top: -49.8%;
+    background-color: rgb(55, 70, 127);
+}
+.second {
+    width: 75%;
+    height: 725px;
+    background-color: rgb(217, 217, 217);
+    margin-left: 25%;
+    border-radius: 40px 0px 0px 40px;
+    display: inline-block;
+}
+.logo {
+    width: 750px;
+    height: 1000px;
+    background: none;
+    position: absolute;
+    top: -25%;
+    left: 24.5px;
+}
