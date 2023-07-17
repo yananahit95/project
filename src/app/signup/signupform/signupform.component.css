@@ -1,6 +1,10 @@
 @font-face {
-    font-family: 'Assistant';
+    font-family: 'Font';
     src: url(../../../assets/font/static/Assistant-SemiBold.ttf);
+}
+* {
+    font-family: 'Font';
+
 }
 input {
     width: 300px;
@@ -10,7 +14,6 @@ input {
     border: none;
 }
 input::placeholder {
-    font-family: 'Assistant';
     font-size: 16px;
     text-align: left;
     position: absolute;
@@ -53,14 +56,15 @@ h1 {
     text-align: center;
     font-size: 40px;
     line-height: 15px;
-    font-family: 'Assistant';
     font-weight: 700;
     position: absolute;
     top: -60px;
+    font-family: 'Font';
+
+
 }
 p {
     color: #37467F;
-    font-family: 'Assistant';
     font-size: 20px;
     font-weight: 700;
     line-height: 15px;
@@ -95,6 +99,12 @@ option {
     margin-left: -15px;
     margin-bottom: 10px;
     font-size: 15px;
-    font-family: 'Assistant';
     color: #37467F;
+}
+#theAgeLabel {
+    position: absolute;
+    top: 68px;
+    right: 248px;
+    color: gray;
+    opacity: 30%;
 }

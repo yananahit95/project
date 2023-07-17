@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Assistant';
-    src: url(../../../assets/font/static/Assistant-SemiBold.ttf);
+    font-family: 'Font';
+    src: url(../../assets/font/static/Assistant-SemiBold.ttf);
 }
 nav {
     background-color: transparent;
@@ -10,7 +10,7 @@ nav {
     position: fixed;
 }
 .li-item {
-    font-family: 'Assistant';
+    font-family: 'Font';
     font-size: 17px;
     color: #37467F;
 }

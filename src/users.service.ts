@@ -4,8 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UsersService {
-  user: any[]=[]
+  user: any =[]
+  
+  
 
   constructor() { 
+    if(sessionStorage.getItem('user')) {
+          this.user= sessionStorage.getItem('user')
+}
 }
 }

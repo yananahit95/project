@@ -12,8 +12,9 @@
     Name must be at least 4 characters long.
   </div>
 </div>
-    <select class="theAge" title="theAge" formControlName="theAge" id="theAge">
-        <option aria-readonly="" class="ageOpt">Age</option>
+<label for="theAge" id="theAgeLabel" [hidden]="isSelectClicked || hasSelectedValue() || hasOptionSelected()">Age</label>
+    <select class="theAge" title="theAge" formControlName="theAge" id="theAge" (click)="hideLabel()" (blur)="showLabel()" (change)="hideLabel()">
+        <option aria-readonly="" class="ageOpt"></option>
         <option *ngFor="let age of ages">{{age}}</option>
     </select>
 <div *ngIf="signupForm.controls.theAge.invalid && (signupForm.controls.theAge.dirty || signupForm.controls.theAge.touched)"
@@ -37,5 +38,5 @@
     <button type="submit" (click)="onSave()" [disabled]="!passControl()" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign Up</button>
   </form>
 
-{{US.user}}
+
 
