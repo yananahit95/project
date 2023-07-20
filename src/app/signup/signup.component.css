@@ -1,13 +1,5 @@
 * {
-    margin: -8px;
     box-sizing: border-box;
-    overflow: hidden;
-}
-.first {
-    width: 30%;
-    height: 732px;
-    margin-top: -49.8%;
-    background-color: rgb(55, 70, 127);
 }
 .second {
     width: 75%;
@@ -23,5 +15,5 @@
     background: none;
     position: absolute;
     top: -25%;
-    left: 24.5px;
+    left: 0.999%;
 }

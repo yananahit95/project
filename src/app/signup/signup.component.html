@@ -3,13 +3,8 @@
         <h1></h1>
     </form>
 </div>
-<div class="first">
-</div>
 <img src="../../assets/images/logo2.png" class="logo">
-
-
 <app-signupform (successEvent) = "getFullName($event)" ></app-signupform>
 <app-signup-modal [fullName] = "fullName"></app-signup-modal>
-<app-app-header ></app-app-header>
-
+<app-header [headerItem]="{name:'Sign In', routL:'/sign-in'}"></app-header>
   

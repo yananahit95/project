@@ -12,32 +12,15 @@ export class SigninformComponent {
     fullName: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(public US: UsersService){
-   }
-
-  //  findUser() {
-  //   if(this.US.user.get(['password'])?.value === this.signinForm.get(['password'])?.value && this.US.user.get(['fullName'])?.value === this.signinForm.get(['fullName'])?.value) {
-  //     alert('ok');
-  //   }
-  //  }
+  constructor(public userService: UsersService) {}
   findUser() {
-    let matched = false;
-    this.US.user.forEach((person: any) => {
-      if (
-        person.get(['fullName'])?.value === this.signinForm.get(['fullName'])?.value &&
-        person.get(['password'])?.value === this.signinForm.get(['password'])?.value
-      ) {
-        matched = true;
-        return;
-      }
-    });
-
-    if(matched) {
-      alert('Ok');
+    let user = this.signinForm.value;1
+    let isUserFound = this.userService.findUser(user);
+    if (isUserFound) {
+      alert('Ok!');
     } else {
-      alert('Invalid Full Name or Password');
-    };
-
+      alert('User not found!');
+    }
     this.signinForm.reset();
   }
 }

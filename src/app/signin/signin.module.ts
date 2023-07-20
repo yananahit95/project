@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SigninComponent } from './signin.component';
 import { SigninformComponent } from './signinform/signinform.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AppHeaderComponent } from '../app-header/app-header.component';
-
+import { AppHeaderModule } from '../app-header/app-header.module';
 
 
 @NgModule({
@@ -15,7 +14,7 @@ import { AppHeaderComponent } from '../app-header/app-header.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    
+    AppHeaderModule
   ], 
   exports: [
     SigninComponent

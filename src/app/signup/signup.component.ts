@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
   fullName: string = '';
-
+  
   getFullName(fullName: any) {
     this.fullName = fullName;
     console.log(fullName, 3333)

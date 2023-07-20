@@ -4,7 +4,7 @@ import { SignupComponent } from './signup.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupModalComponent } from './signup-modal/signup-modal.component';
-import { AppHeaderComponent } from '../app-header/app-header.component';
+import { AppHeaderModule } from '../app-header/app-header.module';
 
 
 
@@ -13,11 +13,12 @@ import { AppHeaderComponent } from '../app-header/app-header.component';
     SignupComponent,
     SignupformComponent,
     SignupModalComponent,
-    AppHeaderComponent
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppHeaderModule
+
   ], 
   exports: [
     SignupComponent

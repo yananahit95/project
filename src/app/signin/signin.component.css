@@ -1,13 +1,5 @@
 * {
-    margin: -8px;
     box-sizing: border-box;
-    overflow: hidden;
-}
-.first {
-    width: 30%;
-    height: 732px;
-    margin-top: -49.8%;
-    background-color: rgb(55, 70, 127);
 }
 .second {
     width: 75%;
@@ -23,32 +15,58 @@
     background: none;
     position: absolute;
     top: -25%;
-    left: 24.5px;
+    left: 0.999%;
 }
-* {
-    margin: -8px;
-    box-sizing: border-box;
-    overflow: hidden;
+@media (max-width: 1920px) {
+    .logo {
+        background: none;
+        position: absolute;
+        top: -25%;
+        left: 0.999%;
+    }
 }
-.first {
-    width: 30%;
-    height: 732px;
-    margin-top: -49.8%;
-    background-color: rgb(55, 70, 127);
+@media (max-width: 1200px) {
+    .logo {
+        background: none;
+        position: absolute;
+        top: -50%;
+        left: -4.2%;
+    }
 }
-.second {
-    width: 75%;
-    height: 725px;
-    background-color: rgb(217, 217, 217);
-    margin-left: 25%;
-    border-radius: 40px 0px 0px 40px;
-    display: inline-block;
+@media (max-width: 1024px) {
+    .logo {
+        background: none;
+        position: absolute;
+        top: -50%;
+        left: -9.2%;
+    }
 }
-.logo {
-    width: 750px;
-    height: 1000px;
-    background: none;
-    position: absolute;
-    top: -25%;
-    left: 24.5px;
+@media (max-width: 992px) {
+    .logo {
+        background: none;
+        position: absolute;
+        top: -50%;
+        left: -10.3%;
+    }
+    .second {
+        width: 76%;
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        width: 500px;
+        height: 700px;
+        background: none;
+        position: absolute;
+        top: -10%;
+        left: -5.5%;
+    }
+    .second {
+        width: 88%;
+    }
+    .appHeader {
+        height: 200px;
+        width: 200px;
+        background-color: red;
+    }
 }

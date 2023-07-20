@@ -36,7 +36,7 @@ export class SignupformComponent {
     ]),
   });
 
-  constructor(public US: UsersService) {
+  constructor(public userService: UsersService) {
     this.addAges();
   }
 
@@ -77,11 +77,9 @@ export class SignupformComponent {
   hasOptionSelected(): boolean {
     return this.selectedValue !== '' && this.selectedValue !== null && this.selectedValue !== undefined;
   }
-
   onSave() {
     const formValues = this.signupForm.value;
-    this.US.user.push(formValues);
-    sessionStorage.setItem('userArrayValues', JSON.stringify(this.US.user));
+    this.userService.saveUser(formValues);
     this.successEvent.emit(this.signupForm.get('fullName')?.value);
     this.signupForm.reset();
   }
