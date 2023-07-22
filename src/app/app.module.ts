@@ -6,7 +6,7 @@ import { SigninModule } from './signin/signin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppHeaderModule } from './app-header/app-header.module';
 import { UserListComponent } from './user-list/user-list.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,6 +20,7 @@ import { UserListComponent } from './user-list/user-list.component';
     SignupModule,
     SigninModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

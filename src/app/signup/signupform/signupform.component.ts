@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsersService } from 'src/users.service';
 
+
 @Component({
   selector: 'app-signupform',
   templateUrl: './signupform.component.html',
@@ -11,8 +12,6 @@ import { UsersService } from 'src/users.service';
 export class SignupformComponent {
   @Output() successEvent = new EventEmitter<any>();
   ages: number[] = [];
-
-
   signupForm = new FormGroup({
     fullName: new FormControl('', [
       Validators.required,
@@ -45,15 +44,12 @@ export class SignupformComponent {
       this.ages.push(i);
     }
   }
-
   passControl(): any {
     if (this.signupForm.get(['password'])?.value !== '' && this.signupForm.valid) {
       return this.signupForm.get(['password'])?.value === this.signupForm.get(['confirmPassword'])?.value;
     }
   }
-
   isPasswordMismatch: boolean = false;
-
   checkPasswordMatch() {
     const password = this.signupForm.get('password')?.value;
     const confirmPassword = this.signupForm.get('confirmPassword')?.value;
@@ -61,26 +57,32 @@ export class SignupformComponent {
   }
   isSelectClicked = false;
   selectedValue = '';
-
   hideLabel(): void {
     this.isSelectClicked = true;
   }
-
   showLabel(): void {
     this.isSelectClicked = false;
   }
-
   hasSelectedValue(): boolean {
     return this.selectedValue !== '';
   }
-
   hasOptionSelected(): boolean {
     return this.selectedValue !== '' && this.selectedValue !== null && this.selectedValue !== undefined;
   }
+
   onSave() {
-    const formValues = this.signupForm.value;
-    this.userService.saveUser(formValues);
+    if (this.signupForm.valid) {
+      const formValues = this.signupForm.value;
+      this.userService.postRequest(formValues).subscribe(
+        (response: any) => {
+          console.log('Post request successful', response);
+          this.signupForm.reset();
+        },
+        (error: any) => {
+          console.error('Error occurred', error);
+        }
+      );
+    }
     this.successEvent.emit(this.signupForm.get('fullName')?.value);
-    this.signupForm.reset();
   }
 }

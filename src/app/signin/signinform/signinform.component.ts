@@ -14,13 +14,13 @@ export class SigninformComponent {
   });
   constructor(public userService: UsersService) {}
   findUser() {
-    let user = this.signinForm.value;1
-    let isUserFound = this.userService.findUser(user);
-    if (isUserFound) {
-      alert('Ok!');
-    } else {
-      alert('User not found!');
-    }
-    this.signinForm.reset();
+    let user = this.signinForm.value;
+    // let isUserFound = this.userService.findUser(user);
+    // if (isUserFound) {
+    //   alert('Ok!');
+    // } else {
+    //   alert('User not found!');
+    // }
+    // this.signinForm.reset();
   }
 }
