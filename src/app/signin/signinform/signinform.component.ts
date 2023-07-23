@@ -13,14 +13,8 @@ export class SigninformComponent {
     password: new FormControl(''),
   });
   constructor(public userService: UsersService) {}
-  findUser() {
-    let user = this.signinForm.value;
-    // let isUserFound = this.userService.findUser(user);
-    // if (isUserFound) {
-    //   alert('Ok!');
-    // } else {
-    //   alert('User not found!');
-    // }
-    // this.signinForm.reset();
+  onSubmit() {
+    const fullName = this.signinForm.get('fullName')?.value;
+    const password = this.signinForm.get('password')?.value;
   }
 }

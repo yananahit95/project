@@ -76,6 +76,7 @@ export class SignupformComponent {
       this.userService.postRequest(formValues).subscribe(
         (response: any) => {
           console.log('Post request successful', response);
+          console.log(formValues);
           this.signupForm.reset();
         },
         (error: any) => {
