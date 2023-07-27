@@ -4,23 +4,25 @@ import { AppComponent } from './app.component';
 import { SignupModule } from './signup/signup.module';
 import { SigninModule } from './signin/signin.module';
 import { AppRoutingModule } from './app-routing.module';
-import { AppHeaderModule } from './app-header/app-header.module';
-import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { UserListModule } from './user-list/user-list.module';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserListHeaderModule } from './user-list/user-list-header/user-list-header.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     SignupModule,
     SigninModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    UserListModule,
+    UserListHeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

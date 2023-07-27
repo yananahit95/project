@@ -18,7 +18,6 @@ import { AppHeaderModule } from '../app-header/app-header.module';
     CommonModule,
     ReactiveFormsModule,
     AppHeaderModule
-
   ], 
   exports: [
     SignupComponent

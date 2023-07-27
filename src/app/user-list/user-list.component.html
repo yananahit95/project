@@ -1,1 +1,102 @@
-<p>user-list works!</p>
+<div class="body">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item head-li">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item head-li">
+          <a class="nav-link active" aria-current="page" href="#">Lists</a>
+        </li>
+        <li class="nav-item head-li">
+          <a class="nav-link active" aria-current="page" href="#">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h2 class="students-list-head">Students List</h2>
+
+
+<div class="container students-tab-container">
+  <div class="row">
+    <div class="col-6">
+      <div class="search-inp-div">
+        <input class="search-inp" type="text" placeholder="Search by full name">
+        <i class="fa fa-search vector-img" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="col-6">
+      <button class="add-a" data-bs-toggle="modal" data-bs-target="#exampleModalUser" (click)="submitBtn()">
+        Add Student
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<table class="table table-bordered students-table">
+  <tbody>
+  <tr>
+    <td>ID</td>
+    <td>Full Name</td>
+    <td>Age</td>
+    <td>Profession</td>
+    <td>Email</td>
+    <td>Action</td>
+  </tr>
+  <tr class="text-center">
+    <td>1</td>
+    <td>Name 1</td>
+    <td>Age 1</td>
+    <td>Profession 1</td>
+    <td>Email 1</td>
+    <td class="d-flex td-icons">
+      <i class="fa fa-eye" aria-hidden="true"></i>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <i class="fa fa-trash-o trash" aria-hidden="true"></i>
+    </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Name 2</td>
+    <td>Age 2</td>
+    <td>Profession 2</td>
+    <td>Email 2</td>
+    <td class="d-flex td-icons">
+      <i class="fa fa-eye" aria-hidden="true"></i>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <i class="fa fa-trash-o trash" aria-hidden="true"></i>
+    </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Name 3</td>
+    <td>Age 3</td>
+    <td>Profession 3</td>
+    <td>Email 3</td>
+    <td class="d-flex td-icons">
+      <i class="fa fa-eye" aria-hidden="true"></i>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <i class="fa fa-trash-o trash" aria-hidden="true"></i>
+    </td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Name 4</td>
+    <td>Age 4</td>
+    <td>Profession 4</td>
+    <td>Email 4</td>
+    <td class="d-flex td-icons">
+      <i class="fa fa-eye" aria-hidden="true"></i>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <i class="fa fa-trash-o trash" aria-hidden="true"></i>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<app-user-list-modal></app-user-list-modal>
+</div>

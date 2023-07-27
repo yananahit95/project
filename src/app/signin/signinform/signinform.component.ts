@@ -13,8 +13,11 @@ export class SigninformComponent {
     password: new FormControl(''),
   });
   constructor(public userService: UsersService) {}
+
+
   onSubmit() {
-    const fullName = this.signinForm.get('fullName')?.value;
-    const password = this.signinForm.get('password')?.value;
+      this.userService.findUsers()
+    }
+
   }
-}
+

@@ -1,0 +1,76 @@
+.head-li{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .head-li a{
+    color: #37467F !important;
+    font-weight: 700;
+    font-size: 24px;
+    align-items: end;
+    text-align: right;
+  }
+  .navbar-expand-lg{
+    position: absolute !important;
+    right: 100px !important;
+    z-index: 100 !important;
+    padding: 0 !important;
+  }
+  .navbar-expand-lg .container-fluid{
+    background-color: white;
+  }
+  .students-list-head{
+    color: #37467F;
+    font-size: 40px;
+    font-weight: 700;
+    top: 100px;
+    position: absolute;
+    left: 45%;
+  }
+  .add-a{
+    color: white;
+    font-weight: 700;
+    background-color: #37467F;
+    padding: 10px;
+    text-decoration: none;
+  }
+  .students-tab-container{
+    position: absolute;
+    top: 200px;
+  }
+  .search-inp{
+    width: 300px;
+  }
+  .vector-img{
+    position: relative;
+    right: 23px;
+    width: 20px;
+    top: -2px;
+  }
+  .table-bordered{
+    position: absolute;
+    top: 300px;
+    max-width: 70%;
+    left: 15%;
+  }
+  .students-table tbody tr td{
+    color: #37467F !important;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    border-color: #37467F;
+  }
+  .students-table tbody tr{
+    border-color: #37467F;
+  }
+  .td-icons img{
+    position: relative;
+    left: 100px;
+    margin-right: 20px;
+    width: 25px;
+  }
+  i {
+    margin-right: 20px;
+  }
+  .trash {
+    color: red;
+  }

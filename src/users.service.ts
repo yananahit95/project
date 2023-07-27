@@ -6,18 +6,35 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   postRequest(data: any) {
-    const url = 'http://localhost:3000/users/sign-up'; 
-    return this.http.post(url, data);
+    const url = 'http://localhost:3000/users/sign-up';
+    return this.http.post(url, data)
   }
-}
 
-// saveUser(user: any) {
-//   sessionStorage.setItem('userArrayValues', JSON.stringify(this.users));
-// }
-// findUser(user: any): boolean {
-//   let storedUsers = JSON.parse(sessionStorage.getItem('userArrayValues') || '[]');
-//   return storedUsers.some((storedUser: any) => storedUser.fullName === user.fullName && storedUser.password === user.password);
-// }
+  getUser(user: any) {
+    this.postRequest(user).subscribe(
+      response => {
+        console.log('Post request successful:', response);
+      },
+      error => {
+        console.error('Error occurated', error)
+      }
+    )
+  };
+
+  getRequest() {
+    return this.http.get('http://localhost:3000/users')
+  };
+
+  findUsers() {
+    this.http.get('http://localhost:3000/users').subscribe((data: any) => {
+      console.log(data)
+    }, error => {
+      console.error('Error', error)
+    }
+    )
+  }
+ }
+

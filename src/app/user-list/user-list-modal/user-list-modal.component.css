@@ -1,0 +1,96 @@
+.title {
+    color: #37467F;
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 2.4px;
+  }
+  
+  .sign-up-form {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .sub-title {
+    color: #39447D;
+    text-align: right;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 1px;
+    margin-top: 23px;
+    display: block;
+    margin-right: -33px;
+  }
+  
+  .form {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .form-control {
+    margin: 0 auto 16px;
+    width: 800px;
+    height: 48px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+  }
+  
+  select {
+    margin: 0 auto 16px;
+    width: 800px;
+    height: 48px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    border: none;
+    color: #37467F;
+    outline: none;
+  }
+  
+  .form-control::placeholder {
+    color: #D9D9D9;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .sign-button {
+    background: #37467F;
+    height: 44px;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0.8px;
+    border-radius: 0;
+  }
+  .sign-button-div {
+    width: 800px;
+    margin: 0 auto;
+  }
+  
+  .validation_text {
+    text-align: left;
+    color: red;
+  }
+  
+  .d-block{
+    display: block !important;
+  }
+  .alert{
+    color:red;
+    width: 800px;
+    margin: 0 auto 16px;
+  }

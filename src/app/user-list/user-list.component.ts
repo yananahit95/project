@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsersService } from 'src/users.service';
 
 @Component({
   selector: 'app-user-list',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
+  constructor(public userService: UsersService) {
+    this.submitBtn()
+  } 
 
+  submitBtn() {
+    this.userService.findUsers();
+  }
 }

@@ -1,0 +1,72 @@
+  <div class="modal fade" id="exampleModalUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" class="form" [formGroup]="formListForm">
+                <input type="text" id="fullName" class="form-control" placeholder="Full Name"
+                       formControlName='fullName' #fullName>
+                <div
+                  *ngIf="formListForm.controls.fullName.invalid && (formListForm.controls.fullName.dirty || formListForm.controls.fullName.touched)"
+                  class="alert p-0">
+      
+                  <div *ngIf="formListForm.controls.fullName.errors?.['required']" class="validation_text">
+                    Name is required.
+                  </div>
+                  <div *ngIf="formListForm.controls.fullName.errors?.['minlength']" class="validation_text">
+                    Name must be at least 4 characters long.
+                  </div>
+      
+                </div>
+                <select name="" id="age" formControlName='age'>
+                  <option aria-readonly="">Age</option>
+                  <option *ngFor="let age of ages">{{age}}</option>
+                </select>
+                <div
+                  *ngIf="formListForm.controls.age.invalid && (formListForm.controls.age.dirty || formListForm.controls.age.touched)"
+                  class="alert p-0">
+      
+                  <div *ngIf="formListForm.controls.age.errors?.['required']" class="validation_text">
+                    Age is required.
+                  </div>
+      
+                </div>
+                <input type="text" id="profession" class="form-control" placeholder="Profession" formControlName='profession'>
+                <div
+                  *ngIf="formListForm.controls.profession.invalid && (formListForm.controls.profession.dirty || formListForm.controls.profession.touched)"
+                  class="alert p-0">
+      
+                  <div *ngIf="formListForm.controls.profession.errors?.['required']" class="validation_text">
+                    Profession is required.
+                  </div>
+                  <div *ngIf="formListForm.controls.profession.errors?.['minlength']" class="validation_text">
+                    Profession must be at least 4 characters long.
+                  </div>
+      
+                </div>
+                <input type="email" id="email" class="form-control" placeholder="Email" formControlName='email'>
+                <div
+                  *ngIf="formListForm.controls.email.invalid && (formListForm.controls.email.dirty || formListForm.controls.email.touched)"
+                  class="alert p-0">
+      
+                  <div *ngIf="formListForm.controls.email.errors?.['required']" class="validation_text">
+                    Profession is required.
+                  </div>
+                  <div *ngIf="formListForm.controls.email.errors?.['minlength']" class="validation_text">
+                    Profession must be at least 4 characters long.
+                  </div>
+      
+                </div>
+                <div>
+                  <button class="btn sign-button">Add Student</button>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>

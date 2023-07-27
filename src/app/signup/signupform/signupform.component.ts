@@ -69,20 +69,11 @@ export class SignupformComponent {
   hasOptionSelected(): boolean {
     return this.selectedValue !== '' && this.selectedValue !== null && this.selectedValue !== undefined;
   }
-
   onSave() {
     if (this.signupForm.valid) {
-      const formValues = this.signupForm.value;
-      this.userService.postRequest(formValues).subscribe(
-        (response: any) => {
-          console.log('Post request successful', response);
-          console.log(formValues);
-          this.signupForm.reset();
-        },
-        (error: any) => {
-          console.error('Error occurred', error);
-        }
-      );
+      const formData = this.signupForm.value;
+
+      this.userService.getUser(this.signupForm.value)
     }
     this.successEvent.emit(this.signupForm.get('fullName')?.value);
   }
