@@ -1,4 +1,4 @@
-  <div class="modal fade" id="exampleModalUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -22,7 +22,7 @@
       
                 </div>
                 <select name="" id="age" formControlName='age'>
-                  <option aria-readonly="">Age</option>
+                  <option aria-readonly="true">Age</option>
                   <option *ngFor="let age of ages">{{age}}</option>
                 </select>
                 <div
@@ -61,7 +61,7 @@
       
                 </div>
                 <div>
-                  <button class="btn sign-button">Add Student</button>
+                  <button class="btn sign-button" (click)="submitForm()">Add Student</button>
                 </div>
               </form>
         </div>

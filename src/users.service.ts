@@ -1,40 +1,46 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  postRequest(data: any) {
-    const url = 'http://localhost:3000/users/sign-up';
-    return this.http.post(url, data)
+  sendSignUpData(data: any) {
+    return this.http.post('http://localhost:3000/users/sign-up', data);
   }
 
-  getUser(user: any) {
-    this.postRequest(user).subscribe(
+  signUpUser(user: any) {
+    this.sendSignUpData(user).subscribe(
       response => {
         console.log('Post request successful:', response);
       },
       error => {
-        console.error('Error occurated', error)
+        console.error('Error occurred during sign-up:', error);
       }
-    )
+    );
   };
 
-  getRequest() {
-    return this.http.get('http://localhost:3000/users')
-  };
-
-  findUsers() {
-    this.http.get('http://localhost:3000/users').subscribe((data: any) => {
-      console.log(data)
-    }, error => {
-      console.error('Error', error)
-    }
-    )
+  sendSignInData(data: any) {
+    return this.http.post('http://localhost:3000/users/sign-up', data);
   }
- }
+
+  signInUser(user: any) {
+    this.sendSignInData(user).subscribe(
+      (response: any) => {
+        this.router.navigate(['/user-list']);
+        console.log('Sign-in successful:', response);
+      },
+      (error:any) => {
+        alert('Invalid Full Name or Password')
+        console.error('Error occurred during sign-in:', error);
+      }
+    );
+  }
+}
+
 

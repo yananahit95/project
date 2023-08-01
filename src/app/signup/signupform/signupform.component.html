@@ -1,42 +1,44 @@
-<form [formGroup]="signupForm">
-    <h1>Sign Up</h1>
-    <p>Welcome</p>
-    <input type="text" placeholder="Full Name" formControlName ='fullName' id="fullName" >
-    <div *ngIf="signupForm.controls.fullName.invalid && (signupForm.controls.fullName.dirty || signupForm.controls.fullName.touched)"
-    class="alert">
+<form [formGroup]="signupForm" (ngSubmit)="onSave()">
+  <h1>Sign Up</h1>
+  <p>Welcome</p>
 
-<div *ngIf="signupForm.controls.fullName.errors?.['required']" class="alert">
-    Name is required.
-  </div>
-  <div *ngIf="signupForm.controls.fullName.errors?.['minlength']" class="alert">
-    Name must be at least 4 characters long.
-  </div>
-</div>
-<label for="theAge" id="theAgeLabel" [hidden]="isSelectClicked || hasSelectedValue() || hasOptionSelected()">Age</label>
-    <select class="theAge" title="theAge" formControlName="theAge" id="theAge" (click)="hideLabel()" (blur)="showLabel()" (change)="hideLabel()">
-        <option aria-readonly="" class="ageOpt"></option>
-        <option *ngFor="let age of ages">{{age}}</option>
-    </select>
-<div *ngIf="signupForm.controls.theAge.invalid && (signupForm.controls.theAge.dirty || signupForm.controls.theAge.touched)"
-    class="alert">
-  <div *ngIf="signupForm.controls.theAge.errors?.['required']">
-    Age is required.
-  </div>
-</div>
-    <input type="text" placeholder="Profession" formControlName ="profession" id="profession">
-<div *ngIf="signupForm.controls.profession.invalid && (signupForm.controls.profession.dirty || signupForm.controls.profession.touched)"
-    class="alert">
-  <div *ngIf="signupForm.controls.profession.errors?.['required']">
-    Profession is required.
-  </div>
-</div>
-    <input type="password" placeholder="Password" formControlName="password" id="password">
-    <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" id="confirmPassword" (keyup)="checkPasswordMatch()">
-    <div *ngIf="isPasswordMismatch">
-      Passwords do not match.
+  <!-- Full Name Input -->
+  <input type="text" placeholder="Full Name" formControlName="fullName" id="fullName">
+  <div *ngIf="signupForm.get('fullName')!.invalid && signupForm.get('fullName')!.dirty" class="alert">
+    <div *ngIf="signupForm.get('fullName')!.errors?.['required']" class="alert">
+      Name is required.
     </div>
-    <button type="submit" (click)="onSave()" [disabled]="!passControl()" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign Up</button>
-  </form>
+    <div *ngIf="signupForm.get('fullName')!.errors?.['minlength']" class="alert">
+      Name must be at least 4 characters long.
+    </div>
+  </div>
 
+  <!-- Age Select -->
+  <select class="theAge" title="theAge" formControlName="theAge" id="theAge">
+    <option aria-readonly="true">Age</option>
+    <option *ngFor="let age of ages">{{age}}</option>
+  </select>
+  <div *ngIf="signupForm.get('theAge')!.invalid && signupForm.get('theAge')!.dirty" class="alert">
+    <div *ngIf="signupForm.get('theAge')!.errors?.['required']" class="alert">
+      Age is required.
+    </div>
+  </div>
 
+  <!-- Profession Input -->
+  <input type="text" placeholder="Profession" formControlName="profession" id="profession">
+  <div *ngIf="signupForm.get('profession')!.invalid && signupForm.get('profession')!.dirty" class="alert">
+    <div *ngIf="signupForm.get('profession')!.errors?.['required']" class="alert">
+      Profession is required.
+    </div>
+  </div>
 
+  <!-- Password Inputs -->
+  <input type="password" placeholder="Password" formControlName="password" id="password">
+  <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" id="confirmPassword" (keyup)="checkPasswordMatch()">
+  <div *ngIf="isPasswordMismatch">
+    Passwords do not match.
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="signupForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onSave">Sign Up</button>
+</form>

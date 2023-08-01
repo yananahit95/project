@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UsersService } from 'src/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -7,11 +8,21 @@ import { UsersService } from 'src/users.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
-  constructor(public userService: UsersService) {
-    this.submitBtn()
-  } 
+  @Input() signUpPage: { name: string; routL: string } = { name: '', routL: '' };
+
+  constructor(public userService: UsersService, private router: Router) {}
+
+  students: any[] = [];
+
+  onFormSubmit(formData: any) {
+    this.students.push(formData);
+  }
 
   submitBtn() {
-    this.userService.findUsers();
+    this.router.navigate(['/sign-in']);
+    this.router.navigate([], {
+      queryParams: { showModal: 'true' },
+      queryParamsHandling: 'merge',
+    });
   }
 }

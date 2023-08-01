@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" href="#">Lists</a>
         </li>
         <li class="nav-item head-li">
-          <a class="nav-link active" aria-current="page" href="#">Log Out</a>
+          <a class="nav-link active" aria-current="page" href="#" (click)="submitBtn()">Log Out</a>
         </li>
       </ul>
     </div>
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="col-6">
-      <button class="add-a" data-bs-toggle="modal" data-bs-target="#exampleModalUser" (click)="submitBtn()">
+      <button class="add-a" data-bs-toggle="modal" data-bs-target="#userModal" (click)="submitBtn()">
         Add Student
       </button>
     </div>
@@ -54,7 +54,7 @@
     <td>Age 1</td>
     <td>Profession 1</td>
     <td>Email 1</td>
-    <td class="d-flex td-icons">
+    <td class="td-icons">
       <i class="fa fa-eye" aria-hidden="true"></i>
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
       <i class="fa fa-trash-o trash" aria-hidden="true"></i>
@@ -66,7 +66,7 @@
     <td>Age 2</td>
     <td>Profession 2</td>
     <td>Email 2</td>
-    <td class="d-flex td-icons">
+    <td class="td-icons">
       <i class="fa fa-eye" aria-hidden="true"></i>
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
       <i class="fa fa-trash-o trash" aria-hidden="true"></i>
@@ -78,7 +78,7 @@
     <td>Age 3</td>
     <td>Profession 3</td>
     <td>Email 3</td>
-    <td class="d-flex td-icons">
+    <td class="td-icons">
       <i class="fa fa-eye" aria-hidden="true"></i>
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
       <i class="fa fa-trash-o trash" aria-hidden="true"></i>
@@ -90,13 +90,24 @@
     <td>Age 4</td>
     <td>Profession 4</td>
     <td>Email 4</td>
-    <td class="d-flex td-icons">
+    <td class="td-icons">
       <i class="fa fa-eye" aria-hidden="true"></i>
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
       <i class="fa fa-trash-o trash" aria-hidden="true"></i>
     </td>
+    <tr *ngFor="let student of students; let i = index" class="text-center">
+      <td>{{ i + 1 }}</td>
+      <td>{{ student.fullName }}</td>
+      <td>{{ student.age }}</td>
+      <td>{{ student.profession }}</td>
+      <td>{{ student.email }}</td>
+      <td class="td-icons">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <i class="fa fa-trash-o trash" aria-hidden="true"></i>
+      </td>
   </tr>
   </tbody>
 </table>
-<app-user-list-modal></app-user-list-modal>
+<app-user-list-modal (formDataEmitter)="onFormSubmit($event)"></app-user-list-modal>
 </div>

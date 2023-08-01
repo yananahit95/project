@@ -7,7 +7,7 @@
     font-weight: 700;
     font-size: 24px;
     align-items: end;
-    text-align: right;
+    text-align: center;
   }
   .navbar-expand-lg{
     position: absolute !important;
@@ -31,7 +31,8 @@
     font-weight: 700;
     background-color: #37467F;
     padding: 10px;
-    text-decoration: none;
+    border: none;
+    outline: none;
   }
   .students-tab-container{
     position: absolute;

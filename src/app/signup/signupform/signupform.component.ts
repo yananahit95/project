@@ -2,13 +2,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsersService } from 'src/users.service';
 
-
 @Component({
   selector: 'app-signupform',
   templateUrl: './signupform.component.html',
   styleUrls: ['./signupform.component.css']
 })
-
 export class SignupformComponent {
   @Output() successEvent = new EventEmitter<any>();
   ages: number[] = [];
@@ -22,7 +20,7 @@ export class SignupformComponent {
     ]),
     profession: new FormControl('', [
       Validators.required,
-    ] ),
+    ]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
@@ -40,41 +38,23 @@ export class SignupformComponent {
   }
 
   addAges() {
-    for (let i = 2023; i >= 1930; i--) {
+    for (let i = 99; i >= 1; i--) {
       this.ages.push(i);
     }
   }
-  passControl(): any {
-    if (this.signupForm.get(['password'])?.value !== '' && this.signupForm.valid) {
-      return this.signupForm.get(['password'])?.value === this.signupForm.get(['confirmPassword'])?.value;
-    }
-  }
   isPasswordMismatch: boolean = false;
-  checkPasswordMatch() {
-    const password = this.signupForm.get('password')?.value;
-    const confirmPassword = this.signupForm.get('confirmPassword')?.value;
-    this.isPasswordMismatch = password !== confirmPassword;
-  }
-  isSelectClicked = false;
-  selectedValue = '';
-  hideLabel(): void {
-    this.isSelectClicked = true;
-  }
-  showLabel(): void {
-    this.isSelectClicked = false;
-  }
-  hasSelectedValue(): boolean {
-    return this.selectedValue !== '';
-  }
-  hasOptionSelected(): boolean {
-    return this.selectedValue !== '' && this.selectedValue !== null && this.selectedValue !== undefined;
-  }
+    checkPasswordMatch(): any {
+      const password = this.signupForm.get('password')?.value;
+      const confirmPassword = this.signupForm.get('confirmPassword')?.value;
+      this.isPasswordMismatch = password !== confirmPassword;
+    }
+
   onSave() {
     if (this.signupForm.valid) {
       const formData = this.signupForm.value;
-
-      this.userService.getUser(this.signupForm.value)
-    }
-    this.successEvent.emit(this.signupForm.get('fullName')?.value);
-  }
+      this.userService.signUpUser(formData)
+   }
+   this.successEvent.emit(this.signupForm.get('fullName')?.value);
+   this.signupForm.reset();
+  };
 }
