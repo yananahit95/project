@@ -21,16 +21,11 @@ export class SigninformComponent {
   });
 
   constructor(private userService: UsersService) {}
-  signInPost(data: any){
-    this.userService.sendSignInData(data).subscribe()
-  }
 
   onSubmit() {
     if (this.signinForm.valid) {
       let signInValue = this.signinForm.value;
-      this.userService.sendSignInData(signInValue);
       this.userService.signInUser(signInValue);
-      this.signInPost(signInValue)
       this.signinForm.reset();
    }
   }

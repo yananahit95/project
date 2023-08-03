@@ -17,7 +17,7 @@ export class UsersService {
   signUpUser(user: any) {
     this.sendSignUpData(user).subscribe(
       response => {
-        console.log('Post request successful:', response);
+        console.log('Sign Up Post request successful:', response);
       },
       error => {
         console.error('Error occurred during sign-up:', error);
@@ -26,21 +26,21 @@ export class UsersService {
   };
 
   sendSignInData(data: any) {
-    return this.http.post('http://localhost:3000/users/sign-up', data);
+    return this.http.post('http://localhost:3000/users/sign-in', data);
   }
 
   signInUser(user: any) {
     this.sendSignInData(user).subscribe(
-      (response: any) => {
+      response => {
         this.router.navigate(['/user-list']);
-        console.log('Sign-in successful:', response);
+        console.log('Sign-in Post request successful', response);
       },
-      (error:any) => {
-        alert('Invalid Full Name or Password')
+      error => {
+        alert('Invalid Full Name or Password');
         console.error('Error occurred during sign-in:', error);
       }
     );
-  }
+  };
 }
 
 
