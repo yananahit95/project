@@ -23,8 +23,7 @@
       Age is required.
     </div>
   </div>
-
-  <!-- Profession Input -->
+ <!-- Profession Input -->
   <input type="text" placeholder="Profession" formControlName="profession" id="profession">
   <div *ngIf="signupForm.get('profession')!.invalid && signupForm.get('profession')!.dirty" class="alert">
     <div *ngIf="signupForm.get('profession')!.errors?.['required']" class="alert">

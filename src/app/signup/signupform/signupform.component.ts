@@ -38,7 +38,7 @@ export class SignupformComponent {
   }
 
   addAges() {
-    for (let i = 99; i >= 1; i--) {
+    for (let i = 0; i <= 99; i++) {
       this.ages.push(i);
     }
   }
