@@ -33,11 +33,11 @@ export class UsersService {
     this.sendSignInData(user).subscribe(
       response => {
         this.router.navigate(['/user-list']);
-        console.log('Sign-in Post request successful', response);
+        console.log("Sign-in Post request successful", response);
       },
       error => {
         alert('Invalid Full Name or Password');
-        console.error('Error occurred during sign-in:', error);
+        console.log("Error occurred during sign-in", error);
       }
     );
   };
